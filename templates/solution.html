@@ -1,0 +1,50 @@
+{% extends 'base2.html' %}
+{% block title %}Solution{% endblock title %}
+{% block style %}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  padding-top:50px;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+{% endblock style %}
+
+{% block body %}
+<h2 align="center" style="padding-top:50px; padding-bottom:40px" > We Recommend the following Crops</h2>
+{% comment %} {{ans}} {% endcomment %}
+
+<table  id="customers" align="center" >
+<th> No</th>
+<th> Crops </th>
+{%for key,value in ans.items%}
+
+<tr>
+        
+        <td>  {{ key }} </td> 
+        <td>  {{ value }} </td>
+    </tr>
+
+{% endfor %} 
+</table>
+
+
+
+{% endblock body %}
